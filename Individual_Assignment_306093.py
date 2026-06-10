@@ -20,7 +20,7 @@ for ticker in tickers:
     stock = yf.Ticker(ticker)
     
     # Fetching the trading data from 1  month ago
-    hist = stock.history(period="1mo")
+    hist = stock.history(period="1mo").dropna()
     
     # Ensuring that the data is enough to compare yesterday and today
     if len(hist) >= 2:
